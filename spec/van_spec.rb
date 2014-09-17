@@ -15,7 +15,7 @@ describe Van do
     broken_bike = Bike.new
     broken_bike.break!
     van.dock(broken_bike)
-    van.release_to_garage
+    van.release_broken_bikes
     expect(van.bike_count).to eq(0)
   end
 
@@ -36,6 +36,7 @@ describe Van do
    	van.accept_from_station(station)
    	expect(van.bike_count).to eq(1)
    end
+ 
 
   	
 end

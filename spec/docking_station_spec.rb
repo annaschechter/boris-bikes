@@ -25,7 +25,7 @@ it "should release broken bikes to the van" do
 	broken_bike = Bike.new
 	broken_bike.break!
 	station.dock(broken_bike)
-	station.release_to_van
+	station.release_broken_bikes
 	expect(station).to be_empty
 end
 
