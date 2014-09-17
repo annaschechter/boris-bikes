@@ -58,5 +58,13 @@ describe BikeContainer do
     it "should dock a bike even if bike = empty" do
         expect(lambda {holder.dock(:b)}).to raise_error(RuntimeError)
     end
+    
+    it "should know what bikes are broken" do
+        working_bike, broken_bike = Bike.new, Bike.new
+        broken_bike.break!
+        holder.dock(working_bike)
+        holder.dock(broken_bike)
+        expect(holder.broken_bikes).to eq([broken_bike])
+    end
 
 end
