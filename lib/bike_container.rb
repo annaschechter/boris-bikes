@@ -15,6 +15,7 @@ module BikeContainer
   	@capacity = value
   end
 
+# although we could get rid of bike_count we should keep it because it makes our code shorter and hence more readable
   def bike_count
     bikes.count
   end
@@ -41,5 +42,5 @@ module BikeContainer
   def broken_bikes
     bikes.select {|bike| bike.broken? }
   end
-  
+
 end
