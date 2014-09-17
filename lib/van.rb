@@ -18,4 +18,10 @@ class Van
       raise "The van is full!" if full?
     end
 
+    def accept_fixed_bikes(garage)
+      bikes << garage.release until garage.available_bikes.empty?
+      raise "The van is full" if full?
+    end
+
+    
 end

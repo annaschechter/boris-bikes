@@ -3,7 +3,6 @@ require 'garage'
 describe Garage do
 	
   let(:van) { Van.new(:capacity => 123) }
-  let(:station) { DockingStation.new(:capacity => 20)}
   let(:bike) {Bike.new}
   let(:garage) {Garage.new(:capacity => 20)}
 
