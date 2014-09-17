@@ -16,4 +16,8 @@ class DockingStation
   	!available_bikes.empty?
   end
 
+  def release_to_van
+  	bikes.delete(broken_bikes.pop)
+  end
+
 end

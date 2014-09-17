@@ -18,5 +18,14 @@ it "should know when there are no bikes available" do
 	expect(available_bikes).to be_empty
 	expect(station).not_to have_rentals
 end
-	
+
+it "should release broken bikes to the van" do
+	expect(station).to be_empty
+	broken_bike = Bike.new
+	broken_bike.break!
+	station.dock(broken_bike)
+	station.release_to_van
+	expect(station).to be_empty
+end
+
 end
