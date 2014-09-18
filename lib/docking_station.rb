@@ -22,7 +22,7 @@ class DockingStation
   
   def accept_fixed_bikes(van)
     raise "The station is full!" if full?
-    else bikes << van.release until van.available_bikes.empty?
+    bikes << van.release until van.available_bikes.empty?
   end
 
 end
