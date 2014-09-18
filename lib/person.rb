@@ -14,5 +14,9 @@ class Person
 	def rent_a_bike(station)
         @bike = station.release
 	end
-
+    
+    def return_bike(station)
+    	station.dock(@bike)
+    	@bike = nil
+    end
 end

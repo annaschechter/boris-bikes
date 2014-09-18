@@ -16,5 +16,12 @@ describe Person do
 		expect(person).to have_bike
 	end
 
+	it "should be able to return a bike" do
+		station.dock(bike)
+		person.rent_a_bike(station)
+		person.return_bike(station)
+		expect(person).to_not have_bike
+	end
+
 
 end
