@@ -67,4 +67,9 @@ describe BikeContainer do
         expect(holder.broken_bikes).to eq([broken_bike])
     end
 
+    it "should not accept anything but positive integers for capacity" do
+        holder.capacity = "-2"
+        expect(holder.capacity).to eq(10)
+    end
+
 end
