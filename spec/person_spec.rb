@@ -23,5 +23,12 @@ describe Person do
 		expect(person).to_not have_bike
 	end
 
+	it "should be able to fall down and break a bike" do
+        station.dock(bike)
+		person.rent_a_bike(station)
+		person.crash(bike)
+		expect(bike).to be_broken
+	end
+
 
 end
