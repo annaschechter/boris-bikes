@@ -47,7 +47,7 @@ describe BikeContainer do
     	expect(lambda {holder.release}).to raise_error(RuntimeError)
     end
 
-    it "should release a bike even if bike = empty" do
+    it "should release a bike even if bike argument empty" do
         expect(holder.bike_count).to eq(0)
         holder.dock(bike)
         holder.release

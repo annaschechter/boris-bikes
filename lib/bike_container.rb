@@ -8,16 +8,18 @@ module BikeContainer
   end
 
   def capacity
-    if @capacity.is_a? Integer
-      if @capacity >= 0
-        @capacity
-      else
-        @capacity = DEFAULT_CAPACITY
-      end
-    else
-      @capacity = DEFAULT_CAPACITY
-    end
+    @capacity = DEFAULT_CAPACITY unless integer(@capacity) && positive(@capacity)
+    @capacity
   end 
+
+  def integer(value)
+    return true if value.is_a? Integer
+  end
+
+  def positive(number)
+    return true if number >= 0
+  end 
+       
 
   def capacity=(value) 
   	@capacity = value

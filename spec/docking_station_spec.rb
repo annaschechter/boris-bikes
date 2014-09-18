@@ -5,6 +5,10 @@ describe DockingStation do
 let(:station) { DockingStation.new(:capacity => 20) }
 let(:van) {Van.new(:capacity => 20)}
 
+def fill_container(holder)
+	20.times {holder.dock(Bike.new)}
+end
+
 it "should allow setting default capacity on initialising" do
   expect(station.capacity).to eq(20)
 end
@@ -37,5 +41,10 @@ it "should accept working bikes from the van" do
 	expect(station.bike_count).to eq(2)
 end
 
+it "should not accept fixed bikes if full" do
+	fill_container van
+	fill_container station
+	expect(lambda {station.accept_fixed_bikes(van)}).to raise_error(RuntimeError)
+end
 
 end
